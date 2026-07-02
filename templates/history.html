@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>History | Third Eye</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/home.css') }}">
+
+</head>
+
+<body>
+
+<!-- Navigation -->
+
+<nav>
+
+    <div class="logo">👁 Third Eye</div>
+
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/dashboard">Dashboard</a></li>
+        <li><a href="/generate">Generate Face</a></li>
+        <li><a href="/history">History</a></li>
+        <li><a href="/contact">Contact</a></li>
+    </ul>
+
+</nav>
+
+<section class="history-page">
+
+<h1>Generated Suspect History</h1>
+<form action="/history" method="POST" style="margin-bottom:30px;">
+
+    <select name="gender">
+
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+
+    </select>
+
+    <button class="btn">
+        Search
+    </button>
+
+</form>
+<table>
+
+<tr>
+    <th>ID</th>
+    <th>Gender</th>
+    <th>Age</th>
+    <th>Face</th>
+    <th>Hair</th>
+    <th>Eyes</th>
+    <th>Skin</th>
+    <th>Description</th>
+    <th>Image</th>
+    <th>Action</th>
+</tr>
+
+{% for face in faces %}
+
+<tr>
+
+<td>{{ face[0] }}</td>
+<td>{{ face[1] }}</td>
+<td>{{ face[2] }}</td>
+<td>{{ face[3] }}</td>
+<td>{{ face[4] }}</td>
+<td>{{ face[5] }}</td>
+<td>{{ face[6] }}</td>
+<td>{{ face[7] }}</td>
+
+<td>
+    <img src="{{ url_for('static', filename=face[8]) }}" width="120">
+</td>
+
+<td>
+    <a href="/delete/{{ face[0] }}" class="btn">
+        🗑 Delete
+    </a>
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</section>
+
+<footer>
+
+<h3>Third Eye</h3>
+
+<p>AI-Based Forensic Text-to-Image Generation System</p>
+
+</footer>
+
+</body>
+
+</html>

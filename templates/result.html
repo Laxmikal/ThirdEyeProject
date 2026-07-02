@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Generated Result | Third Eye</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<nav>
+
+    <div class="logo">👁 Third Eye</div>
+
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/dashboard">Dashboard</a></li>
+        <li><a href="/generate">Generate Face</a></li>
+        <li><a href="/login">Logout</a></li>
+    </ul>
+
+</nav>
+
+<section class="generate-section">
+
+<div class="generate-box">
+
+<h1>🎯 Generated Suspect Face</h1>
+
+<p>Your AI-generated forensic suspect has been created successfully.</p>
+
+<hr style="margin:30px 0;">
+
+<h2 style="color:#38bdf8;">Suspect Details</h2>
+
+<p><b>Gender :</b> {{ gender }}</p>
+
+<p><b>Age :</b> {{ age }}</p>
+
+<p><b>Face Shape :</b> {{ face }}</p>
+
+<p><b>Hair Color :</b> {{ hair }}</p>
+
+<p><b>Eye Color :</b> {{ eyes }}</p>
+
+<p><b>Skin Tone :</b> {{ skin }}</p>
+
+<p><b>Description :</b> {{ description }}</p>
+
+<hr style="margin:30px 0;">
+
+<h2 style="color:#38bdf8;">Generated AI Face</h2>
+
+<img src="{{ url_for('static', filename=image) }}"
+     class="generated-image"
+     alt="Generated Face">
+
+<br><br>
+
+<a href="{{ url_for('static', filename=image) }}"
+   download
+   class="btn">
+
+⬇ Download Image
+
+</a>
+
+&nbsp;&nbsp;
+
+<a href="/generate"
+   class="btn">
+
+🔄 Generate Another
+
+</a>
+
+&nbsp;&nbsp;
+
+<a href="/dashboard"
+   class="btn">
+
+🏠 Dashboard
+
+</a>
+
+</div>
+
+</section>
+
+<footer>
+
+<h3>Third Eye</h3>
+
+<p>AI-Based Forensic Text-to-Image Generation System</p>
+
+<p>© 2026 Third Eye | Final Year Project</p>
+
+</footer>
+
+</body>
+
+</html>

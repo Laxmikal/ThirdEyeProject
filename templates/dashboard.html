@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Dashboard | Third Eye</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='css/home.css') }}">
+
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+
+    <div class="logo">
+        👁 Third Eye
+    </div>
+
+    <ul>
+
+        <li><a href="/">Home</a></li>
+        <li><a href="/generate">Generate Face</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/login">Logout</a></li>
+
+    </ul>
+
+</nav>
+
+<!-- ================= DASHBOARD ================= -->
+
+<section class="dashboard">
+<div class="stats">
+
+    <div class="stat-card">
+        <h2>👤 {{ total_users }}</h2>
+        <p>Registered Users</p>
+    </div>
+
+    <div class="stat-card">
+        <h2>🤖 {{ total_faces }}</h2>
+        <p>Generated Faces</p>
+    </div>
+
+</div>
+<h1>Welcome to Third Eye</h1>
+
+<p>
+
+AI-Based Forensic Text-to-Image Generation System
+
+</p>
+
+<div class="dashboard-cards">
+
+<div class="dashboard-card">
+    <div class="card">
+
+    <h2>📜 History</h2>
+
+    <p>
+        View all previously generated suspect faces.
+    </p>
+
+    <a href="/history" class="btn">
+        View History
+    </a>
+
+</div>
+
+<h2>🤖 Generate AI Face</h2>
+
+<p>
+
+Generate realistic suspect faces from eyewitness descriptions.
+
+</p>
+
+<a href="/generate" class="btn">
+
+Generate Face
+
+</a>
+
+</div>
+
+<div class="dashboard-card">
+
+<h2>ℹ About Project</h2>
+
+<p>
+
+Learn about the AI-powered forensic face generation system.
+
+</p>
+
+<a href="/about" class="btn">
+
+Read More
+
+</a>
+
+</div>
+
+<div class="dashboard-card">
+
+<h2>📞 Contact</h2>
+
+<p>
+
+Need help? Contact the Third Eye team.
+
+</p>
+
+<a href="/contact" class="btn">
+
+Contact Us
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<h3>Third Eye</h3>
+
+<p>AI-Based Forensic Text-to-Image Generation System</p>
+
+<p>© 2026 Third Eye | Final Year Project</p>
+
+</footer>
+
+</body>
+</html>

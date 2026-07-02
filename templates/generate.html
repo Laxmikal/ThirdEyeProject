@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Generate Face | Third Eye</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<nav>
+
+    <div class="logo">👁 Third Eye</div>
+
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/dashboard">Dashboard</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/login">Logout</a></li>
+    </ul>
+
+</nav>
+
+<section class="generate-section">
+
+<div class="generate-box">
+
+<h1>🤖 Generate AI Face</h1>
+
+<p>Enter eyewitness details to generate a forensic suspect face.</p>
+
+<form action="{{ url_for('result') }}" method="POST">
+
+<label>Gender</label>
+
+<select name="gender" required>
+    <option value="">Select Gender</option>
+    <option>Male</option>
+    <option>Female</option>
+</select>
+
+<label>Age Group</label>
+
+<select name="age" required>
+    <option value="">Select Age</option>
+    <option>18-25</option>
+    <option>26-35</option>
+    <option>36-45</option>
+    <option>46+</option>
+</select>
+
+<label>Face Shape</label>
+
+<select name="face" required>
+    <option value="">Select Face Shape</option>
+    <option>Oval</option>
+    <option>Round</option>
+    <option>Square</option>
+    <option>Long</option>
+</select>
+
+<label>Hair Color</label>
+
+<select name="hair" required>
+    <option value="">Select Hair Color</option>
+    <option>Black</option>
+    <option>Brown</option>
+    <option>Blonde</option>
+    <option>Gray</option>
+</select>
+
+<label>Eye Color</label>
+
+<select name="eyes" required>
+    <option value="">Select Eye Color</option>
+    <option>Brown</option>
+    <option>Black</option>
+    <option>Blue</option>
+    <option>Green</option>
+</select>
+
+<label>Skin Tone</label>
+
+<select name="skin" required>
+    <option value="">Select Skin Tone</option>
+    <option>Fair</option>
+    <option>Medium</option>
+    <option>Dark</option>
+</select>
+
+<label>Additional Description</label>
+
+<textarea
+name="description"
+rows="5"
+placeholder="Example: Thick beard, long nose, scar on left cheek, wearing spectacles..."
+required></textarea>
+
+<button type="submit" class="btn" onclick="showLoading()">
+Generate Face
+</button>
+
+<p id="loading" style="display:none;">
+⏳ Generating AI Face...
+</p>
+
+</form>
+
+</div>
+
+</section>
+
+<script>
+
+function showLoading(){
+
+document.getElementById("loading").style.display="block";
+
+}
+
+</script>
+
+</body>
+
+</html>
